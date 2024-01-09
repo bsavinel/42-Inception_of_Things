@@ -1,3 +1,9 @@
 #!/bin/sh
 echo A
-# curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="agent --server https://k3s.example.com --token mypassword" sh -s -
+# sudo k3s kubectl get nodes -o wide
+curl -sfL https://get.k3s.io | sh -s agent --server https://192.168.56.110:6443 --node-ip=192.168.56.111 --token coucou
+
+
+
+
+# curl -sfL https://get.k3s.io | K3S_URL="https://192.168.56.110:6443" sh -s - agent --token coucou --node-ip 192.168.56.111
