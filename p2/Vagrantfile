@@ -7,14 +7,6 @@ tab_machines=[
 		:box => "debian/buster64",
 		:script => "./scripts/server.sh"
 	},
-	{
-		:name => "bsavinelSW",
-		:ip => "192.168.56.111",
-		:cpu => 1,
-		:ram => 1024,
-		:box => "debian/buster64",
-		:script => "./scripts/agent.sh"
-	}
 ]
 
 Vagrant.configure("2") do |config|
@@ -22,7 +14,8 @@ Vagrant.configure("2") do |config|
 		config.vm.define machine[:name] do |node|
 			node.vm.box = machine[:box]
 			node.vm.hostname = machine[:name]
-			node.vm.network "public_network", bridge: "enp0s31f6", ip: machine[:ip]
+			node.vm.network "public_network", bridge: "enp0s3", ip: machine[:ip]
+			config.vm.synced_folder "./scripts", "/vagrant/scripts", type: "rsync"
 			node.vm.provider "virtualbox" do |v|
 				v.name = machine[:name]
 				v.memory = machine[:ram]
