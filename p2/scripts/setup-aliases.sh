@@ -15,6 +15,6 @@ alias kd='kubectl delete '
 alias kdf='kubectl delete -f '
 alias kaf='kubectl apply -f '
 alias kgpa='kubectl get pods --all-namespaces'
-alias wpods='watch -n 1 kubectl get pod'" >> ~/.bashrc
+alias wpods='watch -n 1 kubectl get pod'" >> /home/vagrant/.bashrc
 
 echo "--- setup done"
