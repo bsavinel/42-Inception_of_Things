@@ -5,7 +5,7 @@ tab_machines=[
 		:cpu => 1,
 		:ram => 1024,
 		:box => "debian/buster64",
-		:script => "./scripts/server.sh"
+		:script => "./scripts/setup-server.sh"
 	},
 ]
 
