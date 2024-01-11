@@ -14,7 +14,7 @@ spec:
             service:
               name: apple-service
               port:
-                number: 5678
+                number: 5677
         - path: /banana
           pathType: Prefix
           backend:
@@ -29,3 +29,10 @@ spec:
               name: citron-service
               port:
                 number: 5678
+        - path: /coconut
+          pathType: Prefix
+          backend:
+            service:
+              name: coconut-service
+              port:
+                number: 8080

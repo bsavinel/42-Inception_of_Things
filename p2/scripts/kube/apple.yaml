@@ -11,6 +11,7 @@ spec:
       image: hashicorp/http-echo
       args:
         - "-text=apple"
+        - "-listen=:5677"
 
 ---
 
@@ -22,4 +23,4 @@ spec:
   selector:
     app: apple
   ports:
-    - port: 5678 # Default port for image
+    - port: 5677
