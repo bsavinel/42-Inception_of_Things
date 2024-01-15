@@ -4,7 +4,7 @@ tab_machines=[
 		:ip => "192.168.56.110",
 		:cpu => 1,
 		:ram => 1024,
-		:box => "debian/buster64",
+		:box => "debian/bookworm64",
 		:script => "./scripts/server.sh"
 	},
 	{
@@ -12,7 +12,7 @@ tab_machines=[
 		:ip => "192.168.56.111",
 		:cpu => 1,
 		:ram => 1024,
-		:box => "debian/buster64",
+		:box => "debian/bookworm64",
 		:script => "./scripts/agent.sh"
 	}
 ]
