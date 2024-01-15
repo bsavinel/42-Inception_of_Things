@@ -1,38 +1,61 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: example-ingress
+  name: main-ingress
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
-      paths:
-        - path: /apple
-          pathType: Prefix
-          backend:
-            service:
-              name: apple-service
-              port:
-                number: 5677
-        - path: /banana
-          pathType: Prefix
-          backend:
-            service:
-              name: banana-service
-              port:
-                number: 5678
-        - path: /citron
-          pathType: Prefix
-          backend:
-            service:
-              name: citron-service
-              port:
-                number: 5678
-        - path: /coconut
-          pathType: Prefix
-          backend:
-            service:
-              name: coconut-service
-              port:
-                number: 8080
+    - host: "app-one.com"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: app-one-service
+                port:
+                  number: 8080
+    - host: "app-two.com"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: app-two-service
+                port:
+                  number: 8080
+    - host: "app-three.com"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: app-three-service
+                port:
+                  number: 8080
+    # - host: "coucou.com"
+    #   http:
+    #     - path: /app2
+    #       pathType: Prefix
+    #       backend:
+    #         service:
+    #           name: app-two-service
+    #           port:
+    #             number: 8080
+    #     - path: /app3
+    #       pathType: Prefix
+    #       backend:
+    #         service:
+    #           name: app-three-service
+    #           port:
+    #             number: 8080
+    #     - path: /coconut
+    #       pathType: Prefix--no-sandbox
+    #       backend:
+    #         service:
+    #           name: coconut-service
+    #           port:
+    #             number: 8080

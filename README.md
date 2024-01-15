@@ -6,9 +6,15 @@ You will learn how to set up a personal virtual machine with Vagrant and the
 distribution of your choice. Then, you will learn how to use K3s and its Ingress.
 Last but not least, you will discover K3d that will simplify your life.
 
+## Part 2
+
+#### Add these code to /etc/hosts
+
+	127.0.0.1       app-one.com
+	127.0.0.1       app-two.com
+	127.0.0.1       app-three.com
 
 ## Usefull commands
-
 
 ### Vagrant
 Turn on auto resync on synced folders
