@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-two-app
+  labels:
+    app: app-two
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-two
+  template:
+    metadata:
+      labels:
+        app: app-two
+    spec:
+      containers:
+        - name: app-two-app
+          image: paulbouwer/hello-kubernetes:1.10
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: MESSAGE
+              value: "Hello from app-two"
+
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-two-service
+spec:
+  selector:
+    app: app-two
+  ports:
+    - port: 8080 # Default port for image
