@@ -1,0 +1,13 @@
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: my-cluster
+servers: 1
+agents: 2
+# extraArgs:
+#   - "--no-deploy=traefik"
+ports:
+  - port: 8081:80
+    nodeFilters:
+    - loadbalancer:*
+  - port: 1234:6443
