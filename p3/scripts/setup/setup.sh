@@ -34,7 +34,6 @@ k3d cluster create p3
 # create namespace for argocd
 kubectl create namespace argocd
 kubectl create namespace dev
-kubectl create namespace gitlab
 
 # apply base config to cluster
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
