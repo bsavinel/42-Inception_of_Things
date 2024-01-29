@@ -53,7 +53,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 echo ""
 
 # create new argo cd app
-kubectl apply -f ../project.yml -n argocd
+kubectl apply -f ../confs/project.yml -n argocd
 
 # expose port to host
 echo "[\033[3;96mWAITING FOR PODS STARTING...\033[m]"

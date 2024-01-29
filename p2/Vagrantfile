@@ -2,8 +2,8 @@ tab_machines=[
 	{
 		:name => "bsavinelS",
 		:ip => "192.168.56.110",
-		:cpu => 2,
-		:ram => 2048,
+		:cpu => 1,
+		:ram => 1024,
 		:box => "debian/bookworm64",
 		:script => "./scripts/setup-server.sh"
 	},
