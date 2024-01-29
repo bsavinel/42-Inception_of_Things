@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: "app-one.com"
+    - host: "app1.com"
       http:
         paths:
           - path: "/"
@@ -16,7 +16,7 @@ spec:
                 name: app-one-service
                 port:
                   number: 8080
-    - host: "app-two.com"
+    - host: "app2.com"
       http:
         paths:
           - path: "/"
@@ -26,7 +26,7 @@ spec:
                 name: app-two-service
                 port:
                   number: 8080
-    - host: "app-three.com"
+    - host: "app3.com"
       http:
         paths:
           - path: "/"
@@ -36,26 +36,3 @@ spec:
                 name: app-three-service
                 port:
                   number: 8080
-    # - host: "coucou.com"
-    #   http:
-    #     - path: /app2
-    #       pathType: Prefix
-    #       backend:
-    #         service:
-    #           name: app-two-service
-    #           port:
-    #             number: 8080
-    #     - path: /app3
-    #       pathType: Prefix
-    #       backend:
-    #         service:
-    #           name: app-three-service
-    #           port:
-    #             number: 8080
-    #     - path: /coconut
-    #       pathType: Prefix--no-sandbox
-    #       backend:
-    #         service:
-    #           name: coconut-service
-    #           port:
-    #             number: 8080

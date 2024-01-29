@@ -1,4 +1,4 @@
-. ../utils/wait_for_pods_to_exist.sh --source-only
+. ./scripts/utils/wait_for_pods_to_exist.sh --source-only
 
 RED='\e[31m'    # Red text
 GREEN='\e[32m'  # Green text

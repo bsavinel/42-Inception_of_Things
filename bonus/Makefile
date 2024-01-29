@@ -1,19 +1,26 @@
 all: base
 	${MAKE} start
 
+bonus:
+	echo -n
+
 start:
-	sh ./scripts/setup/setup.sh
-	sh ./scripts/setup/setup-gitlab.sh
+	sh ./scripts/setup.sh
+	sh ./scripts/setup-gitlab.sh
 
 base:
-	sh ./scripts/setup/setup-aliases.sh
-	sh ./scripts/setup/setup-env.sh
+	sh ./scripts/setup-aliases.sh
+	sh ./scripts/setup-env.sh
 
 clean:
-	k3d cluster delete p4
+	k3d cluster delete bonus
 
-re: clean
+fclean: clean
+	docker stop $(docker ps -a -q) || true
+	docker system prune -af || true
+	docker volume prune -f || true
+
+re: fclean
 	${MAKE} start
 
-
-
+.SILENT:

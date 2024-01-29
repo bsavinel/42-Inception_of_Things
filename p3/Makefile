@@ -2,14 +2,18 @@ all:
 	./scripts/setup-env.sh
 	./scripts/setup.sh
 
-p2:
+p3:
 	echo -n
 
 clean:
-	docker stop $(docker ps -a -q) || true
-	docker system prune -af || true
+	k3d cluster delete p3
 
 fclean: clean
+	docker stop $(docker ps -a -q) || true
+	docker system prune -af || true
 	docker volume prune -f || true
+
+re: fclean
+	$(MAKE) all
 
 .SILENT:

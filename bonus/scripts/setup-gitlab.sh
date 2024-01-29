@@ -1,4 +1,4 @@
-. ../utils/wait_for_pods_to_exist.sh --source-only
+. ./scripts/utils/wait_for_pods_to_exist.sh --source-only
 
 # create namespace for argocd
 kubectl create namespace gitlab
