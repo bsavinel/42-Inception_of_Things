@@ -10,9 +10,11 @@ Last but not least, you will discover K3d that will simplify your life.
 
 #### Add these code to /etc/hosts
 
-	127.0.0.1       app1.com
-	127.0.0.1       app2.com
-	127.0.0.1       app3.com
+	127.0.0.1	app1.com
+	127.0.0.1	app2.com
+	127.0.0.1	app3.com
+	127.0.0.1	localgitlab.gitlab.com
+
 
 #### Curling
 
