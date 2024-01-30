@@ -1,7 +1,7 @@
-RED='\e[31m'    # Red text
-GREEN='\e[32m'  # Green text
-BLUE='\e[34m'   # Blue text
-RESET='\e[0m'   # Reset text color to default
+RED='\e[31m'
+GREEN='\e[32m'
+BLUE='\e[34m'
+RESET='\e[0m'
 
 wait_for_pods_to_exist() {
   local ns=$1

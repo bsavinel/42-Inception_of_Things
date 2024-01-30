@@ -8,6 +8,9 @@ start:
 	sh ./scripts/setup.sh
 	sh ./scripts/setup-gitlab.sh
 
+start-argocd:
+	sh ./scripts/setup-argocd.sh
+
 base:
 	sh ./scripts/setup-aliases.sh
 	sh ./scripts/setup-env.sh
