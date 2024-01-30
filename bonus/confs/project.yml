@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bonus5
+  name: bonus
 spec:
   destination:
     name: ''
@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: playground
-    repoURL: 'http://127.0.0.1:8081/root/test'
+    repoURL: 'http://gitlab-webservice-default.gitlab.svc:8181/root/test.git'
     targetRevision: HEAD
   sources: []
   project: default
